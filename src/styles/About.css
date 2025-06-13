@@ -1,0 +1,84 @@
+.about-section {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  padding: 4rem 1rem 2rem 1rem;
+}
+
+.about-container {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(45, 45, 45, 0.85);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+}
+
+.about-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.about-description {
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+.about-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Foto (opcional) */
+.about-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.about-photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--color-accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 1.5rem 0.5rem;
+  }
+  .about-title {
+    font-size: 1.5rem;
+  }
+  .about-description {
+    font-size: 1rem;
+  }
+  .about-photo img {
+    width: 120px;
+    height: 120px;
+  }
+} 
