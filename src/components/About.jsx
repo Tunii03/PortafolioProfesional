@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/About.css';
-import perfil from '../assets/perfil.jpg'; // Asegúrate de guardar la imagen como perfil.jpg en src/assets
+import perfilImage from '../assets/perfil.jpg'; 
 
 const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="about-container about-centered">
         <div className="about-photo">
-          <img src={perfil} alt="Foto de Juan Ignacio Tuninetti" />
+          <img src={perfilImage} alt="Foto de Juan Ignacio Tuninetti" />
         </div>
         <h2 className="about-title">Sobre Mí</h2>
         <p className="about-description">
