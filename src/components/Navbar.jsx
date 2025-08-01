@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga4';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -12,6 +13,14 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavLinkClick = (sectionName, isMobile = false) => {
+    ReactGA.event({
+      category: 'Navigation',
+      action: 'Click',
+      label: `${sectionName}${isMobile ? ' (Mobile)' : ' (Desktop)'}`
+    });
+  };
 
   const navItems = [
     { name: 'Inicio', href: '#hero' },
@@ -38,7 +47,12 @@ const Navbar = () => {
         </button>
         <div className="navbar-links">
           {navItems.map((item) => (
-            <a key={item.name} href={item.href} className="nav-link">
+            <a 
+              key={item.name} 
+              href={item.href} 
+              className="nav-link"
+              onClick={() => handleNavLinkClick(item.name, false)}
+            >
               {item.name}
             </a>
           ))}
@@ -49,7 +63,10 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               className="mobile-nav-link"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                handleNavLinkClick(item.name, true);
+              }}
             >
               {item.name}
             </a>

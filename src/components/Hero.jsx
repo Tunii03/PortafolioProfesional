@@ -1,7 +1,16 @@
 import { motion } from 'framer-motion';
+import ReactGA from 'react-ga4';
 import '../styles/Hero.css';
 
 const Hero = () => {
+  const handleContactClick = () => {
+    ReactGA.event({
+      category: 'Hero Section',
+      action: 'Click',
+      label: 'Contact Button'
+    });
+  };
+
   return (
     <section id="hero" className="hero-section">
       <div className="hero-content">
@@ -21,6 +30,7 @@ const Hero = () => {
             className="hero-cta"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleContactClick}
           >
             ¡Contáctame!
           </motion.a>

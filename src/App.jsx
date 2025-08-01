@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga4';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,7 +8,15 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import './App.css';
 
+
+ReactGA.initialize('G-RMFX6BB1GB');
+
 function App() {
+  
+  React.useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  }, []);
+
   return (
     <div className="app">
       <Navbar />
