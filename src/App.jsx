@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import './App.css';
 
 
-ReactGA.initialize('G-RMFX6BB1GB');
+ReactGA.initialize('G-RDEQL6G18B');
 
 function App() {
   
