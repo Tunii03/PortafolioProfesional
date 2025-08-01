@@ -1,13 +1,12 @@
 import React from 'react';
-import '../styles/About.css';
-import perfilImage from '../assets/perfil.jpg'; 
+import '../styles/About.css'; 
 
 const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="about-container about-centered">
         <div className="about-photo">
-          <img src={perfilImage} alt="Foto de Juan Ignacio Tuninetti" />
+          <img src="/Perfil.jpg" alt="Foto de Juan Ignacio Tuninetti" />
         </div>
         <h2 className="about-title">Sobre Mí</h2>
         <p className="about-description">
