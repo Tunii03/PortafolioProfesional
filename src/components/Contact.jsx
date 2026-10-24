@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faPhone, faEnvelope, faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import '../styles/Contact.css';
 
@@ -16,7 +16,10 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact-section">
-      <h2 className="contact-title">Contacto</h2>
+      <h2 className="contact-title section-title">Contacto</h2>
+      <p className="section-subtitle">
+        ¿Te interesa trabajar juntos o tenés alguna consulta? Escribime y te respondo a la brevedad.
+      </p>
       <div className="contact-container">
         <div className="contact-info">
           <div className="contact-details">
@@ -26,11 +29,21 @@ const Contact = () => {
             </div>
             <div className="contact-item">
               <FontAwesomeIcon icon={faPhone} />
-              <span>+54 9 3564-667084</span>
+              <a
+                href="tel:+5493564667084"
+                onClick={() => handleSocialLinkClick('Teléfono')}
+              >
+                +54 9 3564-667084
+              </a>
             </div>
             <div className="contact-item">
               <FontAwesomeIcon icon={faEnvelope} />
-              <span>juanituninetti55@gmail.com</span>
+              <a
+                href="mailto:juanituninetti55@gmail.com"
+                onClick={() => handleSocialLinkClick('Email')}
+              >
+                juanituninetti55@gmail.com
+              </a>
             </div>
           </div>
           <div className="social-links">
@@ -54,6 +67,16 @@ const Contact = () => {
               <FontAwesomeIcon icon={faLinkedin} />
               <span>LinkedIn</span>
             </a>
+            <a
+              href="/CV-Juan-Ignacio-Tuninetti.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link contact-cv"
+              onClick={() => handleSocialLinkClick('Download CV (Contacto)')}
+            >
+              <FontAwesomeIcon icon={faFileArrowDown} />
+              <span>Descargar CV</span>
+            </a>
           </div>
         </div>
       </div>
@@ -61,4 +84,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

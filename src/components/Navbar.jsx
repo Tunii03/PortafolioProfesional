@@ -25,15 +25,20 @@ const Navbar = () => {
   const navItems = [
     { name: 'Inicio', href: '#hero' },
     { name: 'Sobre mí', href: '#about' },
+    { name: 'Experiencia', href: '#experience' },
     { name: 'Proyectos', href: '#projects' },
     { name: 'Habilidades', href: '#skills' },
+    { name: 'Certificaciones', href: '#certifications' },
     { name: 'Contacto', href: '#contact' },
   ];
 
   return (
     <nav className={`navbar-container${isScrolled ? ' navbar-scrolled' : ''}`}>
       <div className="navbar-content">
-        <div className="navbar-brand">JIT</div>
+        <a href="#hero" className="navbar-brand" aria-label="Juan Tuninetti - Inicio">
+          <span className="navbar-brand-first">Juan</span>
+          <span className="navbar-brand-last">Tuninetti</span>
+        </a>
         <button
           className="mobile-menu-button"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

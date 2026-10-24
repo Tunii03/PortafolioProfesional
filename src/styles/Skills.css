@@ -16,11 +16,7 @@
 }
 
 .skills-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--color-secondary);
   margin-bottom: 2.5rem;
-  text-align: center;
 }
 
 .skills-category {
@@ -45,6 +41,14 @@
   transition-delay: 0.4s;
 }
 
+.skills-category:nth-child(4) {
+  transition-delay: 0.5s;
+}
+
+.skills-category:nth-child(5) {
+  transition-delay: 0.6s;
+}
+
 .skills-category h3 {
   color: var(--color-accent);
   font-size: 1.3rem;
@@ -65,10 +69,11 @@
   flex-direction: column;
   align-items: center;
   gap: 0.7rem;
-  background: rgba(255,255,255,0.03);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 0.75rem;
   padding: 1.1rem 1.1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
   min-width: 90px;
   max-width: 130px;
   width: 100%;
@@ -79,7 +84,8 @@
 
 .skill-item:hover {
   transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
 }
 
 .skill-icon {
@@ -100,8 +106,9 @@
   bottom: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%) scale(0.8);
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
   padding: 0.8rem 1rem;
   border-radius: 0.5rem;
   font-size: 0.9rem;
@@ -123,7 +130,7 @@
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
+  border-color: var(--color-surface-alt) transparent transparent transparent;
 }
 
 .skill-item:hover .skill-tooltip {

@@ -16,6 +16,11 @@ import jiraIcon from '../assets/skills/jira-logo.svg';
 import excelIcon from '../assets/skills/excel-logo.png';
 import powerbiIcon from '../assets/skills/powerbi-logo.png';
 import gitIcon from '../assets/skills/git-logo.png';
+import typescriptIcon from '../assets/skills/typescript-logo.svg';
+import powerqueryIcon from '../assets/skills/powerquery-logo.svg';
+import scrumIcon from '../assets/skills/scrum-logo.svg';
+import kanbanIcon from '../assets/skills/kanban-logo.svg';
+import englishIcon from '../assets/skills/english-logo.svg';
 
 const frontend = [
   { 
@@ -41,6 +46,12 @@ const frontend = [
     icon: jsIcon, 
     level: 'Básico',
     description: 'Fundamentos de programación y manipulación básica del DOM'
+  },
+  { 
+    name: 'TypeScript', 
+    icon: typescriptIcon, 
+    level: 'Básico',
+    description: 'Tipado estático aplicado sobre JavaScript y React'
   },
   { 
     name: 'Python', 
@@ -102,12 +113,40 @@ const herramientas = [
     level: 'Básico',
     description: 'Comandos básicos y control de versiones simple'
   },
+  { 
+    name: 'Power Query', 
+    icon: powerqueryIcon, 
+    level: 'Intermedio',
+    description: 'Extracción, limpieza y transformación de datos'
+  },
+  { 
+    name: 'Scrum', 
+    icon: scrumIcon, 
+    level: 'Intermedio',
+    description: 'Roles, ceremonias y artefactos del marco de trabajo'
+  },
+  { 
+    name: 'Kanban', 
+    icon: kanbanIcon, 
+    level: 'Intermedio',
+    description: 'Gestión visual del flujo de trabajo y límites de WIP'
+  },
+];
+
+const idiomas = [
+  { 
+    name: 'Inglés', 
+    icon: englishIcon, 
+    level: 'Básico',
+    description: 'Comprensión de documentación técnica'
+  },
 ];
 
 const Skills = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const section = sectionRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -121,13 +160,13 @@ const Skills = () => {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (section) {
+      observer.observe(section);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (section) {
+        observer.unobserve(section);
       }
     };
   }, []);
@@ -159,7 +198,7 @@ const Skills = () => {
       ref={sectionRef}
       aria-labelledby="skills-title"
     >
-      <h2 id="skills-title" className="skills-title">Habilidades</h2>
+      <h2 id="skills-title" className="skills-title section-title">Habilidades</h2>
       <div className="skills-category">
         <h3>Frontend & Lenguajes</h3>
         <div className="skills-list" role="list">
@@ -176,6 +215,12 @@ const Skills = () => {
         <h3>Herramientas & Gestión</h3>
         <div className="skills-list" role="list">
           {herramientas.map(renderSkillItem)}
+        </div>
+      </div>
+      <div className="skills-category">
+        <h3>Idiomas</h3>
+        <div className="skills-list" role="list">
+          {idiomas.map(renderSkillItem)}
         </div>
       </div>
     </section>
